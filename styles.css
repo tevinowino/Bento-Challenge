@@ -1,0 +1,271 @@
+/* 
+  ========================================
+  Basic Reset
+  ========================================
+  We use the universal selector just for box-sizing as it's standard.
+  But for everything else, we will use classes.
+*/
+* {
+    box-sizing: border-box;
+}
+
+/* Page Container */
+
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    background-color: #f5f5f5;
+    color: hsl(0, 0%, 7%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    padding: 16px;
+}
+
+/* Typography Classes */
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+p {
+    font-size: 18px;
+}
+
+/* Helper for specific yellow italic text */
+.text-italic-yellow {
+    font-style: italic;
+    color: hsl(39, 100%, 71%);
+}
+
+/* Helper for specific purple italic text */
+.text-italic-purple {
+    font-style: italic;
+    color: hsl(256, 67%, 59%);
+}
+
+.text-white {
+    color: white;
+}
+
+/* 
+  ========================================
+  Image Utilities
+  ========================================
+*/
+/* Make all images responsive by default */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 
+  Layout Classes
+*/
+.bento-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.row-nested {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* 
+  ========================================
+  Card Components
+  ========================================
+*/
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Background Utilities */
+.bg-purple-100 {
+    background-color: hsl(254, 88%, 90%);
+}
+
+.bg-purple-500 {
+    background-color: hsl(256, 67%, 59%);
+    color: white;
+}
+
+.bg-yellow-100 {
+    background-color: hsl(31, 66%, 93%);
+}
+
+.bg-yellow-500 {
+    background-color: hsl(39, 100%, 71%);
+}
+
+.bg-white {
+    background-color: white;
+}
+
+/* Specific Card Tweaks */
+.card-social-10x {
+    text-align: center;
+    align-items: center;
+}
+
+.card-social-10x h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.img-stars {
+    width: 192px;
+    margin-bottom: 16px;
+}
+
+.card-manage {
+    position: relative;
+}
+
+.img-platforms {
+    width: 140%;
+    max-width: none;
+    margin-left: -20px;
+}
+
+.card-schedule {
+    padding-bottom: 0;
+}
+
+.img-schedule {
+    width: 80%;
+    margin-top: 16px;
+}
+
+.card-schedule-social {
+    text-align: center;
+    align-items: center;
+}
+
+.card-schedule-social h2 {
+    font-size: 20px;
+    /* text-heading-md size */
+}
+
+.img-schedule-posts {
+    padding: 12px 0;
+}
+
+.card-grow {
+    text-align: center;
+    align-items: center;
+}
+
+.img-grow {
+    width: 80%;
+    margin-bottom: 24px;
+}
+
+.card-grow h2 {
+    font-size: 32px;
+    line-height: 1;
+}
+
+.card-audience h2 {
+    font-size: 48px;
+    margin-bottom: 0;
+}
+
+.img-audience {
+    width: 60%;
+    margin-top: 24px;
+}
+
+.card-create-post h2 {
+    font-size: 32px;
+    /* text-heading-xl-tight */
+    line-height: 0.9;
+}
+
+.img-create-post {
+    width: 60%;
+}
+
+.img-ai-content {
+    width: 70%;
+    margin-top: 16px;
+}
+
+@media (min-width: 1024px) {
+
+    .bento-grid {
+        flex-direction: row;
+        height: 100%;
+        /* Fill the page-container height */
+        max-height: 90vh;
+        /* Leave some room for padding */
+    }
+
+    .col-left {
+        width: 25%;
+        order: 1;
+    }
+
+    .col-middle {
+        width: 50%;
+        order: 2;
+    }
+
+    .col-right {
+        width: 25%;
+        order: 3;
+    }
+
+    /* Target direct children cards inside columns */
+    .column>.card {
+        flex: 1;
+    }
+
+    .row-nested {
+        flex-direction: row;
+        flex: 1;
+    }
+
+    .row-nested>.card {
+        flex: 1;
+    }
+
+    .card-social-10x {
+        flex: 2 !important;
+    }
+}
